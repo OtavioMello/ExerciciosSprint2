@@ -25,7 +25,7 @@ public class MovieDAO {
         //Statement that create a new table.
         try(PreparedStatement preparedStatement = connection.prepareStatement
                 ("CREATE TABLE MOVIE (MOVIE_ID INT AUTO_INCREMENT PRIMARY KEY, " +
-                "MOVIE_NAME VARCHAR(50) NOT NULL, MOVIE_DESCRIPTION VARCHAR(200) NOT NULL, MOVIE_YEAR VARCHAR(4) NOT NULL);")){
+                "MOVIE_NAME VARCHAR(50) NOT NULL, MOVIE_DESCRIPTION VARCHAR(200) NOT NULL, MOVIE_YEAR YEAR(4) NOT NULL);")){
             preparedStatement.execute();
         }
     }
@@ -39,7 +39,7 @@ public class MovieDAO {
 
             preparedStatement.setString(1, movie.getMovieName());
             preparedStatement.setString(2, movie.getMovieDescription());
-            preparedStatement.setString(3, movie.getMovieYear());
+            preparedStatement.setInt(3, movie.getMovieYear());
 
             preparedStatement.execute();
 
@@ -81,7 +81,7 @@ public class MovieDAO {
                                 " | Movie ID: " + resultSet.getInt(2) +
                                 " | Movie Name: " + resultSet.getString(3) +
                                 " | Movie Description: " + resultSet.getString(4) +
-                                " | Movie Release Year: " + resultSet.getString(5) +
+                                " | Movie Release Year: " + resultSet.getInt(5) +
                                 "\n============================================================================================================================================");
                 }
             }
