@@ -9,6 +9,8 @@ public class Main {
         //boolean var that keep the menu's loop.
         boolean menu = true;
         Scanner scanner = new Scanner(System.in);
+
+        //Creating a Phrase reference to get class methods.
         Phrase phrase = new Phrase();
 
         do {
@@ -18,14 +20,18 @@ public class Main {
                     "0 -> Exit\n" +
                     "==============()==============\n");
 
+            //Getting the menu option.
             String inputMenu = scanner.nextLine();
 
             switch (inputMenu){
 
                 case "1":
 
+                    //Getting the user input.
                     System.out.println("Type your phrase: ");
                     String inputPhrase = scanner.nextLine();
+
+                    //Validating the inputPhrase using the validation() method.
                     phrase.validation(inputPhrase);
                     break;
 

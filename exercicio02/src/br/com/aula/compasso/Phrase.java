@@ -5,20 +5,25 @@ public class Phrase {
     private String happyFace = ":-)";
     private String sadFace = ":-(";
 
-
-    public void validation(String string){
+    //Method validation, thar will get the inputPhrase as an argument.
+    public void validation(String inputPhrase){
 
         int happyFaceCount = 0;
         int sadFaceCount = 0;
 
-        for (int i = 0; i < string.length(); i++) {
-            if(string.substring(i).startsWith(happyFace)){
+        //For which will loop thought the entire string and pass the index to the substring() method,
+        //that will slice the string from the index to end. The startsWith() method will check if,
+        // from the current index to the end, there is a string corresponding to the comparison attribute,
+        // if there is, it returns true the counter++.
+        for (int i = 0; i < inputPhrase.length(); i++) {
+            if(inputPhrase.substring(i).startsWith(happyFace)){
                 happyFaceCount++;
-            }else if(string.substring(i).startsWith(sadFace)){
+            }else if(inputPhrase.substring(i).startsWith(sadFace)){
                 sadFaceCount++;
             }
         }
 
+        //If that compares the values of the counters.
         if(happyFaceCount > sadFaceCount){
             System.out.println("\n==============================\n" +
                     "Output: Feliz :D\n" +
