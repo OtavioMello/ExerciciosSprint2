@@ -6,6 +6,8 @@ import javax.sql.DataSource;
 import java.sql.Connection;
 import java.sql.SQLException;
 
+    //ConnectionFactory class, responsible for the connection with the DB
+
 public class ConnectionFactory {
 
     private DataSource dataSource;
